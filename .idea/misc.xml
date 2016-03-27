@@ -5,6 +5,7 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/beer-v1" />
+    <file type="web" url="file://$PROJECT_DIR$/listenerTest" />
     <file type="web" url="file://$PROJECT_DIR$/project1" />
   </component>
   <component name="MavenProjectsManager">
@@ -12,6 +13,7 @@
       <list>
         <option value="$PROJECT_DIR$/project1/pom.xml" />
         <option value="$PROJECT_DIR$/beer-v1/pom.xml" />
+        <option value="$PROJECT_DIR$/listenerTest/pom.xml" />
       </list>
     </option>
   </component>

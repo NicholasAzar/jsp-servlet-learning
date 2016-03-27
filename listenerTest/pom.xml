@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jsp-servlet-learning.listenerTest</groupId>
+    <artifactId>listenerTest</artifactId>
+    <version>1.0.0.0</version>
+    <packaging>war</packaging>
+    <name>listenerTest</name>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <build>
+        <sourceDirectory>${basedir}/src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-war</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exploded</goal>
+                            <goal>war</goal>
+                        </goals>
+                        <configuration>
+                            <warSourceDirectory>${project.build.directory}/${project.build.finalName}</warSourceDirectory>
+                            <warName>listenerTest</warName>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <webXml>${project.basedir}/web/WEB-INF/web.xml</webXml>
+                    <webResources>
+                        <webResource>
+                            <filtering>true</filtering>
+                            <directory>web</directory>
+                            <includes>
+                                <include>WEB-INF/weblogic.xml</include>
+                                <include>*</include>
+                            </includes>
+                        </webResource>
+                    </webResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>java.net2</id>
+            <name>Repository hosting the jee6 artifacts</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>

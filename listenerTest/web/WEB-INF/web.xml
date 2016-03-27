@@ -14,30 +14,29 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>Ch3 Beer</servlet-name>
-        <servlet-class>com.example.web.BeerSelect</servlet-class>
+        <servlet-name>ListenerTester</servlet-name>
+        <servlet-class>com.example.ListenerTester</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Ch3 Beer</servlet-name>
-        <url-pattern>/SelectBeer.do</url-pattern>
+        <servlet-name>ListenerTester</servlet-name>
+        <url-pattern>/ListenTest.do</url-pattern>
     </servlet-mapping>
+
+    <listener>
+        <listener-class>com.example.MyServletContextListener</listener-class>
+    </listener>
 
     <servlet>
-        <servlet-name>BeerParamTests</servlet-name>
-        <servlet-class>com.example.TestInitParams</servlet-class>
-
-        <init-param>
-            <param-name>adminEmail</param-name>
-            <param-value>nicholas@nicholasazar.com</param-value>
-        </init-param>
+        <servlet-name>TestSessionParams</servlet-name>
+        <servlet-class>com.example.TestSessionParams</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>BeerParamTests</servlet-name>
-        <url-pattern>/TestInitParams.do</url-pattern>
+        <servlet-name>TestSessionParams</servlet-name>
+        <url-pattern>/TestSessionParams.do</url-pattern>
     </servlet-mapping>
-
+    
     <context-param>
-        <param-name>globalAdminEmail</param-name>
-        <param-value>nick@nicholasazar.com</param-value>
+        <param-name>breed</param-name>
+        <param-value>Husky</param-value>
     </context-param>
 </web-app>
